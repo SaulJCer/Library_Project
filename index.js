@@ -1,17 +1,33 @@
+const myLibrary = []
+
+
+
 function addBook(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = crypto.randomUUID();
 
-    this.info = function() {
-        console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`)
-    }
+
+
 }
 
 
+function addNewBook (nameOfBook, author, pages, read) {
 
-const theHobbit = new addBook("The Hobbit", "J.R.R. Tolkien", 295, "not read");
+    const book1 = new addBook(nameOfBook, author, pages, read);
+
+
+
+    myLibrary.push(book1);
+    return book1;
+
+
+}
+
+
+// const theHobbit = new addBook("The Hobbit", "J.R.R. Tolkien", 295, "not read");
 
 
 function Chicken(recipe, cost) {
