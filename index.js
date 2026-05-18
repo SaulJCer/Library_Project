@@ -37,11 +37,17 @@ const theHungerGames = new addNewBook("The Hunger Games", "Susainze", 150, "read
 
 
 for (const book of myLibrary) {
-    console.log(`Title: ${book.title}`);
-    console.log(`Author: ${book.author}`);
-    console.log(`pages: ${book.pages}`);
-    console.log(`Read: ${book.read}`);
-    console.log(`ID: ${book.id}`);
+    const newPara = document.createElement('div');
+    newPara.textContent = `
+     Title: ${book.title}
+     Author: ${book.author}
+     pages: ${book.pages}
+     Read: ${book.read}
+     ID: ${book.id}
+    `
+
+    htBook = document.getElementsByClassName("books");
+    document.body.appendChild(newPara);
 }
 
 
