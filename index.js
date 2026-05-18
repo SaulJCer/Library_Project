@@ -14,7 +14,7 @@ function addBook(title, author, pages, read) {
 }
 
 
-function addNewBook (varName, nameOfBook, author, pages, read) {
+function addNewBook (nameOfBook, author, pages, read) {
 
 
 
@@ -35,9 +35,13 @@ const arroz = new addNewBook("Arroz", "con pollo", 350, "not read");
 const ofMiceAndMen = new addNewBook("Of Mice and Men", "IDK", 148, "read");
 const theHungerGames = new addNewBook("The Hunger Games", "Susainze", 150, "read");
 
-function Chicken(recipe, cost) {
-    this.recipe = recipe;
-    this.cost = cost;
+
+for (const book of myLibrary) {
+    console.log(`Title: ${book.title}`);
+    console.log(`Author: ${book.author}`);
+    console.log(`pages: ${book.pages}`);
+    console.log(`Read: ${book.read}`);
+    console.log(`ID: ${book.id}`);
 }
 
-food = new Chicken("CHIKON", 50);
+
