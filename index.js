@@ -44,10 +44,10 @@ for (const book of myLibrary) {
      pages: ${book.pages}
      Read: ${book.read}
      ID: ${book.id}
-    `
+    `;
 
-    htBook = document.getElementsByClassName("books");
-    document.body.appendChild(newPara);
+    const htBook = document.getElementById("books")
+    htBook.appendChild(newPara);
 }
 
 
