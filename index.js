@@ -56,10 +56,10 @@ function addBookToSite(book) {
 
     newPara.id = book.id;
     const newButton = document.createElement('button');
-    newButton.id = book.id;
-    
-    s
-    
+    newButton.id = `${book.id}`;
+    newButton.classList.add("RemoveBookButton")    
+    newButton.textContent = 'X';
+
     const htBook = document.getElementById("books");
     
     htBook.appendChild(newPara);
