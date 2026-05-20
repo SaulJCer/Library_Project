@@ -35,6 +35,14 @@ const arroz = new addNewBook("Arroz", "con pollo", 350, "not read");
 const ofMiceAndMen = new addNewBook("Of Mice and Men", "IDK", 148, "read");
 const theHungerGames = new addNewBook("The Hunger Games", "Susainze", 150, "read");
 
+function deleteElementById(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.remove();
+    }
+}
+
+
 
 function addBookToSite(book) {
     const newPara = document.createElement('div');
@@ -46,10 +54,16 @@ function addBookToSite(book) {
      ID: ${book.id}
     `;
 
-
+    newPara.id = book.id;
+    const newButton = document.createElement('button');
+    newButton.id = book.id;
     
-    const htBook = document.getElementById("books")
+    s
+    
+    const htBook = document.getElementById("books");
+    
     htBook.appendChild(newPara);
+    htBook.appendChild(newButton);
 }
 
 
@@ -79,3 +93,5 @@ myForm.addEventListener('submit', function(event) {
     // console.log(myLibrary[lastIndex])
     // addBookToSite(myLibrary[lastIndex]);
 })
+
+
