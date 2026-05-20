@@ -53,3 +53,21 @@ for (const book of myLibrary) {
 }
 
 
+
+const myForm = document.getElementById('newBookFromUser');
+
+myForm.addEventListener('submit', function(event) {
+    // object made from data
+    const formData = new FormData(event.target); 
+
+    // pull valuse out using input names
+    const titleInput = formData.get('title');
+    const titleAuthor = formData.get('author');
+    const titlePages = formData.get('pages');
+    const titleRead = formData.get('read');
+
+    // pass values into form 
+
+    addNewBook(titleInput, titleAuthor, titlePages, titleRead);
+
+})

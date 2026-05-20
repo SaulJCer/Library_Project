@@ -15,12 +15,7 @@
     </div>
     <button command="show-modal" commandfor="newBookForm">New Book</button>
     <dialog id="newBookForm">
-        <form method="dialog" submit="event.preventDefault(); addNewBook(
-            document.getElementById('title'),
-            document.getElementById('author'),
-            document.getElementById('pages'),
-            document.getElementById('read'))
-        ">
+        <form id="newBookFromUser" method="dialog" submit="event.preventDefault();">
             <label for="title">Title of Book</label>
             <input for="title" type="text" id="title">
             <label for="author">Author</label>
