@@ -36,7 +36,7 @@ const ofMiceAndMen = new addNewBook("Of Mice and Men", "IDK", 148, "read");
 const theHungerGames = new addNewBook("The Hunger Games", "Susainze", 150, "read");
 
 
-for (const book of myLibrary) {
+function addBookToSite(book) {
     const newPara = document.createElement('div');
     newPara.textContent = `
      Title: ${book.title}
@@ -50,6 +50,11 @@ for (const book of myLibrary) {
     
     const htBook = document.getElementById("books")
     htBook.appendChild(newPara);
+}
+
+
+for (const book of myLibrary) {
+    addBookToSite(book);
 }
 
 
