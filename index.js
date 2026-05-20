@@ -46,6 +46,8 @@ for (const book of myLibrary) {
      ID: ${book.id}
     `;
 
+
+    
     const htBook = document.getElementById("books")
     htBook.appendChild(newPara);
 }
