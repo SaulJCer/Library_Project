@@ -43,7 +43,14 @@ function deleteElementById(id) {
 }
 
 
-
+function readCheck(bookRead) {
+    if(bookRead == "read") {
+        return "not read";
+    }
+    else {
+        return "read";
+    }
+}
 
 function addBookToSite(book) {
     const newPara = document.createElement('div');
@@ -60,6 +67,21 @@ function addBookToSite(book) {
     newButton.id = `${book.id}`;
     newButton.classList.add("RemoveBookButton")    
     newButton.textContent = 'X';
+
+    const readButton = document.createElement("button");
+    readButton.id = "read"; 
+    readButton.textContent = book.read;
+    
+    readButton.addEventListener('click', () => {
+        console.log(book.read);
+        book.read = readCheck(book.read)
+        console.log(book.read);
+        readButton.textContent = book.read;
+
+
+    })
+
+
     newButton.addEventListener('click', () => {
         newPara.remove();
         newButton.remove()
@@ -69,6 +91,7 @@ function addBookToSite(book) {
     
     htBook.appendChild(newPara);
     htBook.appendChild(newButton);
+    htBook.appendChild(readButton);
 }
 
 
