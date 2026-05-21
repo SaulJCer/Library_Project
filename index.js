@@ -44,6 +44,7 @@ function deleteElementById(id) {
 
 
 
+
 function addBookToSite(book) {
     const newPara = document.createElement('div');
     newPara.textContent = `
@@ -59,6 +60,10 @@ function addBookToSite(book) {
     newButton.id = `${book.id}`;
     newButton.classList.add("RemoveBookButton")    
     newButton.textContent = 'X';
+    newButton.addEventListener('click', () => {
+        newPara.remove();
+        newButton.remove()
+    })
 
     const htBook = document.getElementById("books");
     
