@@ -77,14 +77,13 @@ function addBookToSite(book) {
         book.read = readCheck(book.read)
         console.log(book.read);
         readButton.textContent = book.read;
-
-
     })
 
 
     newButton.addEventListener('click', () => {
         newPara.remove();
-        newButton.remove()
+        newButton.remove();
+        readButton.remove();
     })
 
     const htBook = document.getElementById("books");
