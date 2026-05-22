@@ -20,7 +20,7 @@ function addNewBook (nameOfBook, author, pages, read) {
 
     const book1 = new addBook(nameOfBook, author, pages, read);
     myLibrary.push(book1)
-
+    return(book1);
 }
 
 // function addBookToLibrary(bookObj) {
@@ -118,10 +118,12 @@ myForm.addEventListener('submit', (e) => {
 
     // pass values into form 
 
-    addNewBook(titleValue, authorValue, pagesValue, readValue);
+    addBookToSite (addNewBook(titleValue, authorValue, pagesValue, readValue));
     // let lastIndex = myLibrary.at(-1);
-    // console.log(myLibrary[lastIndex])
     // addBookToSite(myLibrary[lastIndex]);
+
+    // addBookToSite(myLibrary[myLibrary.at(-1)])
+    document.getElementById('newBookFromUser').reset();
 });
 
 
