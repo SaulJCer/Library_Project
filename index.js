@@ -99,7 +99,7 @@ for (const book of myLibrary) {
 }
 
 
-
+const dialogF = document.querySelector('#newBookForm')
 const myForm = document.getElementById('newBookFromUser');
 
 myForm.addEventListener('submit', (e) => {
@@ -119,11 +119,10 @@ myForm.addEventListener('submit', (e) => {
     // pass values into form 
 
     addBookToSite (addNewBook(titleValue, authorValue, pagesValue, readValue));
-    // let lastIndex = myLibrary.at(-1);
-    // addBookToSite(myLibrary[lastIndex]);
 
-    // addBookToSite(myLibrary[myLibrary.at(-1)])
-    document.getElementById('newBookFromUser').reset();
+
+    myForm.reset();
+    dialogF.close();
 });
 
 
