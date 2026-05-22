@@ -102,26 +102,26 @@ for (const book of myLibrary) {
 
 const myForm = document.getElementById('newBookFromUser');
 
-myForm.addEventListener('submit', function(event) {
-    // object made from data
-    const titleInput = document.getElementById('title');
-    const authorInput = document.getElementById('author');
-    const pagesInput = document.getElementById('pages');
-    const readInput = document.getElementById('read');
+myForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
 
-    // pull valuse out using input names
-    let titleBook = titleInput.textContent;
-    console.log(titleInput);
-    let titleAuthor = authorInput.textContent;
-    let titlePages = pagesInput.textContent;
-    let titleRead = readInput.textContent;
+
+    const titleValue = data.get("title");
+    const authorValue = data.get('author');
+    const pagesValue = data.get('pages');
+    const readValue = data.get("read");
+
+
+
+
 
     // pass values into form 
 
-    addNewBook(titleBook, titleAuthor, titlePages, titleRead);
+    addNewBook(titleValue, authorValue, pagesValue, readValue);
     // let lastIndex = myLibrary.at(-1);
     // console.log(myLibrary[lastIndex])
     // addBookToSite(myLibrary[lastIndex]);
-})
+});
 
 
