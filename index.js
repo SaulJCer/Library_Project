@@ -102,6 +102,8 @@ for (const book of myLibrary) {
 const dialogF = document.querySelector('#newBookForm')
 const myForm = document.getElementById('newBookFromUser');
 
+const allowedValueforRead = ['read', 'not read', 'Read', 'Not read'];
+
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -112,6 +114,11 @@ myForm.addEventListener('submit', (e) => {
     const pagesValue = data.get('pages');
     const readValue = data.get("read");
 
+    if(!allowedValueforRead.includes(readValue)) {
+        alert("Pleast type: read or not read");
+        event.preventDefault();
+        return;
+    }
 
 
 
