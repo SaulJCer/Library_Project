@@ -52,45 +52,48 @@ function readCheck(bookRead) {
     }
 }
 
-function addBookToSite(book) {
-    const newPara = document.createElement('div');
-    newPara.textContent = `
-     Title: ${book.title}
-     Author: ${book.author}
-     pages: ${book.pages}
-     Read: ${book.read}
-     ID: ${book.id}
-    `;
 
-    newPara.id = book.id;
-    const newButton = document.createElement('button');
-    newButton.id = `${book.id}`;
-    newButton.classList.add("RemoveBookButton")    
-    newButton.textContent = 'X';
-
-    const readButton = document.createElement("button");
-    readButton.id = "read"; 
-    readButton.textContent = book.read;
-    
-    readButton.addEventListener('click', () => {
-        console.log(book.read);
-        book.read = readCheck(book.read)
-        console.log(book.read);
+class newBook {
+    constructor (book) {
+        const newPara = document.createElement('div');
+        newPara.textContent = `
+        Title: ${book.title}
+        Author: ${book.author}
+        pages: ${book.pages}
+        Read: ${book.read}
+        ID: ${book.id}
+        `;
+        newPara.id = book.id;
+        const newButton = document.createElement('button');
+        newButton.id = `${book.id}`;
+        newButton.classList.add("RemoveBookButton")    
+        newButton.textContent = 'X';
+        const readButton = document.createElement("button");
+        readButton.id = "read"; 
         readButton.textContent = book.read;
-    })
+        
+        readButton.addEventListener('click', () => {
+            console.log(book.read);
+            book.read = readCheck(book.read)
+            console.log(book.read);
+            readButton.textContent = book.read;
+        })
 
 
-    newButton.addEventListener('click', () => {
-        newPara.remove();
-        newButton.remove();
-        readButton.remove();
-    })
+        newButton.addEventListener('click', () => {
+            newPara.remove();
+            newButton.remove();
+            readButton.remove();
+        })
 
-    const htBook = document.getElementById("books");
-    
-    htBook.appendChild(newPara);
-    htBook.appendChild(newButton);
-    htBook.appendChild(readButton);
+        const htBook = document.getElementById("books");
+        
+        htBook.appendChild(newPara);
+        htBook.appendChild(newButton);
+        htBook.appendChild(readButton);
+            
+
+    }
 }
 
 
